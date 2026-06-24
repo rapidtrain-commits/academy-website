@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="naver-site-verification" content="0153729c4825d963cba510b07ab2ffec879a707a" />
+<meta name="google-site-verification" content="XLjUOPgbut2HWvrSiYSM5tFo5RVqD3ShgODH1Ekd5ig" />
+<title>소수정예 보습학원 - 개별 맞춤 학습의 시작</title>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="소수정예 보습학원 - 개별 맞춤 학습의 시작" />
+<meta property="og:description" content="초등·중등·고등 전 학년 개별 맞춤 학습 플래닝 + 자기주도학습 완성" />
+<meta property="og:image" content="https://rlawogms.github.io/academy-website/thumbnail.png" />
+<meta property="og:url" content="https://rlawogms.github.io/academy-website/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://rlawogms.github.io/academy-website/thumbnail.png" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans KR', sans-serif; color: #1a1a1a; background: #fff; }
+
+.hero {
+  background: #0D2B6B;
+  color: #fff;
+  padding: 70px 32px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,180,0,0.08);
+  top: -100px; right: -80px;
+}
+.hero-badge {
+  display: inline-block;
+  background: #FFB400;
+  color: #0D2B6B;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.hero h1 { font-size: 32px; font-weight: 700; line-height: 1.4; margin-bottom: 14px; color: #fff; }
+.hero h1 span { color: #FFB400; }
+.hero p { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.8; margin-bottom: 32px; }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: #FFB400; color: #0D2B6B; border: none;
+  padding: 14px 30px; border-radius: 8px; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none; display: inline-block;
+}
+.btn-outline {
+  background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5);
+  padding: 13px 30px; border-radius: 8px; font-size: 15px; font-weight: 500;
+  cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none; display: inline-block;
+}
+
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); background: #F5F7FB; border-bottom: 1px solid #E0E6F0; }
+.stat-item { padding: 24px 12px; text-align: center; border-right: 1px solid #E0E6F0; }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-size: 24px; font-weight: 700; color: #0D2B6B; display: block; }
+.stat-label { font-size: 12px; color: #666; margin-top: 4px; }
+
+.section { padding: 52px 40px; }
+.section-bg { padding: 52px 40px; background: #F5F7FB; }
+.accent-line { display: inline-block; width: 36px; height: 3px; background: #FFB400; border-radius: 2px; margin-bottom: 14px; }
+.section-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+.section-sub { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.7; }
+
+.grade-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.tab {
+  padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 500;
+  cursor: pointer; border: 1.5px solid #ccc; color: #666; background: #fff;
+  font-family: 'Noto Sans KR', sans-serif; transition: all 0.2s;
+}
+.tab.active, .tab:hover { background: #0D2B6B; color: #fff; border-color: #0D2B6B; }
+
+.subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+.subject-card {
+  background: #fff; border: 1px solid #E0E6F0; border-radius: 12px;
+  padding: 24px 16px; text-align: center; transition: box-shadow 0.2s;
+}
+.subject-card:hover { box-shadow: 0 4px 16px rgba(13,43,107,0.10); }
+.subject-icon { font-size: 32px; margin-bottom: 10px; display: block; color: #0D2B6B; }
+.subject-name { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+.subject-desc { font-size: 12px; color: #888; line-height: 1.6; }
+
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.feature-card { background: #fff; border-radius: 12px; padding: 24px 18px; border: 1px solid #E0E6F0; }
+.feature-icon-wrap {
+  width: 44px; height: 44px; border-radius: 10px; background: #E8EFFE;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+}
+.feature-icon-wrap i { font-size: 22px; color: #0D2B6B; }
+.feature-title { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+.feature-text { font-size: 13px; color: #666; line-height: 1.7; }
+
+.teacher-card {
+  background: #fff; border: 1px solid #E0E6F0; border-radius: 12px;
+  padding: 22px 18px; display: flex; gap: 16px; align-items: flex-start;
+  margin-bottom: 14px; transition: box-shadow 0.2s;
+}
+.teacher-card:hover { box-shadow: 0 4px 16px rgba(13,43,107,0.08); }
+.teacher-avatar {
+  width: 54px; height: 54px; min-width: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;
+}
+.av-blue { background: #E8EFFE; color: #0D2B6B; }
+.av-amber { background: #FFF3D0; color: #7A4F00; }
+.av-teal { background: #E0F5EE; color: #0A5E42; }
+.teacher-badge {
+  display: inline-block; background: #FFB400; color: #3D2700;
+  font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; margin-bottom: 6px;
+}
+.teacher-name { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+.teacher-desc { font-size: 13px; color: #666; line-height: 1.7; }
+
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; gap: 16px; align-items: flex-start; padding-bottom: 28px; position: relative; }
+.process-step::before {
+  content: ''; position: absolute; left: 21px; top: 44px;
+  width: 2px; height: calc(100% - 16px); background: #E0E6F0;
+}
+.process-step:last-child::before { display: none; }
+.step-num {
+  width: 44px; height: 44px; min-width: 44px; border-radius: 50%;
+  background: #0D2B6B; color: #fff; font-size: 15px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-title { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; margin-top: 10px; }
+.step-desc { font-size: 13px; color: #666; line-height: 1.7; }
+
+.consult-section { background: #0D2B6B; padding: 56px 40px; text-align: center; color: #fff; }
+.consult-section h2 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.consult-section p { font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 32px; line-height: 1.8; }
+.consult-form { display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
+.consult-form input, .consult-form select {
+  padding: 14px 18px; border-radius: 8px; border: 1.5px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10); color: #fff; font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif; outline: none;
+}
+.consult-form input::placeholder { color: rgba(255,255,255,0.5); }
+.consult-form select option { background: #0D2B6B; color: #fff; }
+.consult-submit {
+  background: #FFB400; color: #0D2B6B; border: none; padding: 16px; border-radius: 8px;
+  font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Noto Sans KR', sans-serif;
+}
+.consult-submit:hover { background: #e6a200; }
+
+.review-card { background: #F5F7FB; border-radius: 12px; padding: 20px 18px; margin-bottom: 14px; }
+.review-stars { color: #FFB400; font-size: 15px; margin-bottom: 8px; }
+.review-text { font-size: 14px; color: #333; line-height: 1.8; margin-bottom: 12px; }
+.review-author { font-size: 12px; color: #888; }
+
+.footer { background: #0D1C3B; color: rgba(255,255,255,0.6); padding: 40px; font-size: 13px; line-height: 1.9; }
+.footer strong { color: rgba(255,255,255,0.9); font-size: 16px; display: block; margin-bottom: 10px; }
+
+.floating-btn {
+  position: fixed; bottom: 28px; right: 24px;
+  background: #FFB400; color: #0D2B6B; font-weight: 700; font-size: 14px;
+  padding: 14px 22px; border-radius: 30px; border: none; cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif; box-shadow: 0 4px 16px rgba(255,180,0,0.4);
+  display: flex; align-items: center; gap: 8px; z-index: 999;
+  text-decoration: none; transition: transform 0.2s;
+}
+.floating-btn:hover { transform: translateY(-2px); }
+
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 24px; }
+  .section, .section-bg, .consult-section { padding: 40px 20px; }
+  .footer { padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-badge">✦ 10년 이상 검증된 강사진</div>
+  <h1>우리 아이의 <span>가능성</span>을<br>최대로 끌어올립니다</h1>
+  <p>초등 · 중등 · 고등 전 학년<br>개별 맞춤 학습 플래닝 + 자기주도학습 완성</p>
+  <div class="hero-btns">
+    <a href="tel:01084117380" class="btn-primary">무료 상담 예약</a>
+    <a href="#about" class="btn-outline">학원 소개 보기</a>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div class="stat-item"><span class="stat-num">10년+</span><div class="stat-label">강사 평균 경력</div></div>
+  <div class="stat-item"><span class="stat-num">98%</span><div class="stat-label">학부모 만족도</div></div>
+  <div class="stat-item"><span class="stat-num">1:3</span><div class="stat-label">소수 정예 수업</div></div>
+  <div class="stat-item"><span class="stat-num">15년</span><div class="stat-label">학원 운영 경력</div></div>
+</div>
+
+<section class="section" id="about">
+  <div class="accent-line"></div>
+  <div class="section-title">개설 과목 안내</div>
+  <div class="section-sub">초등부터 고등까지, 필요한 모든 과목을 한 곳에서</div>
+  <div class="grade-tabs">
+    <button class="tab active" onclick="setTab(this)">전체</button>
+    <button class="tab" onclick="setTab(this)">초등</button>
+    <button class="tab" onclick="setTab(this)">중등</button>
+    <button class="tab" onclick="setTab(this)">고등</button>
+  </div>
+  <div class="subject-grid">
+    <div class="subject-card">
+      <span class="subject-icon"><i class="ti ti-math-function"></i></span>
+      <div class="subject-name">수학</div>
+      <div class="subject-desc">개념 완성부터 심화 문제풀이까지<br>단계별 맞춤 커리큘럼</div>
+    </div>
+    <div class="subject-card">
+      <span class="subject-icon"><i class="ti ti-language" style="color:#1A6B3C;"></i></span>
+      <div class="subject-name">영어</div>
+      <div class="subject-desc">회화·문법·독해·내신<br>목표별 집중 수업</div>
+    </div>
+    <div class="subject-card">
+      <span class="subject-icon"><i class="ti ti-book" style="color:#7A2B00;"></i></span>
+      <div class="subject-name">국어</div>
+      <div class="subject-desc">문학·비문학 독해<br>논술 및 작문 지도</div>
+    </div>
+    <div class="subject-card">
+      <span class="subject-icon"><i class="ti ti-atom" style="color:#553AA0;"></i></span>
+      <div class="subject-name">과학</div>
+      <div class="subject-desc">실험·개념 연계<br>내신 집중 대비</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-bg">
+  <div class="accent-line"></div>
+  <div class="section-title">이 학원이 다른 이유</div>
+  <div class="section-sub">단순 강의가 아닌, 아이 한 명 한 명을 위한 성장 시스템</div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon-wrap"><i class="ti ti-target-arrow"></i></div>
+      <div class="feature-title">개별 맞춤 지도</div>
+      <div class="feature-text">학생 개인의 수준과 목표에 맞춘 1:1 커리큘럼 설계. 진단 테스트 후 부족한 부분부터 체계적으로 채워드립니다.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap"><i class="ti ti-calendar-check"></i></div>
+      <div class="feature-title">학습 플래닝</div>
+      <div class="feature-text">주·월 단위 학습 계획 수립 및 진도 점검 피드백. 매월 학부모께 학습 리포트를 투명하게 공유합니다.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap"><i class="ti ti-brain"></i></div>
+      <div class="feature-title">자기주도학습 형성</div>
+      <div class="feature-text">스스로 공부하는 습관 형성을 위한 체계적인 학습 훈련. 학원을 벗어난 날에도 공부하는 아이로 키웁니다.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap"><i class="ti ti-users"></i></div>
+      <div class="feature-title">소수 정예 수업</div>
+      <div class="feature-text">최대 5인 이하 소그룹 구성으로 밀착 관리. 강사가 모든 학생의 이해도를 실시간으로 확인합니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section"
+  <div class="accent-line"></div>
+  <div class="section-title">검증된 강사진 소개</div>
+  <div class="section-sub">10년 이상 현장 경험을 보유한 전문 강사만 엄선하여 운영합니다</div>
+  <div class="teacher-card">
+    <div class="teacher-avatar av-blue">김</div>
+    <div>
+      <div class="teacher-badge">수학 전담</div>
+      <div class="teacher-name">김○○ 선생님</div>
+      <div class="teacher-desc">서울대 수학과 졸업 · 수능 강의 경력 12년<br>중등·고등 수학 내신 및 수능 집중 지도 · 1등급 배출 다수</div>
+    </div>
+  </div>
+  <div class="teacher-card">
+    <div class="teacher-avatar av-amber">박</div>
+    <div>
+      <div class="teacher-badge">영어 전담</div>
+      <div class="teacher-name">박○○ 선생님</div>
+      <div class="teacher-desc">연세대 영어영문학과 졸업 · 토익 990점 · 경력 11년<br>회화·독해·내신 전 영역 지도, 원어민 수준 발음 교정</div>
+    </div>
+  </div>
+  <div class="teacher-card">
+    <div class="teacher-avatar av-teal">이</div>
+    <div>
+      <div class="teacher-badge">국어·논술</div>
+      <div class="teacher-name">이○○ 선생님</div>
+      <div class="teacher-desc">고려대 국어교육과 졸업 · 논술 전문 강사 · 경력 14년<br>수능 국어 1등급 배출 다수 · 대입 논술 합격 실적 보유</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-bg">
+  <div class="accent-line"></div>
+  <div class="section-title">등록 &amp; 상담 절차</div>
+  <div class="section-sub">간단한 4단계로 우리 아이 맞춤 수업을 시작하세요</div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">온라인 상담 예약</div>
+        <div class="step-desc">하단 양식 작성 또는 전화 예약으로 방문 일정을 잡아드립니다. 예약 후 3시간 이내 담당 강사가 직접 연락드립니다.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">학원 방문 &amp; 학습 진단</div>
+        <div class="step-desc">학생 수준 진단 테스트와 학부모 상담을 통해 현재 수준과 목표를 정확히 파악합니다. (약 40분 소요)</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">맞춤 커리큘럼 설계</div>
+        <div class="step-desc">진단 결과를 바탕으로 개인별 학습 플랜과 반 배정을 완료합니다. 목표 성적까지의 로드맵을 함께 그려드립니다.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">수업 시작 &amp; 지속 관리</div>
+        <div class="step-desc">수업 시작 후 월 1회 학습 피드백 리포트로 학부모께 진도를 투명하게 공유하며 지속 관리합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="consult-section" id="consult">
+  <h2>무료 상담 / 방문 신청</h2>
+  <p>📞 <strong style="color:#FFB400;font-size:18px;">010-8411-7380</strong><br>지금 바로 전화 또는 신청하시면<br>담당 선생님이 직접 연락드립니다</p>
+  <div class="consult-form">
+    <input type="text" placeholder="학생 이름" />
+    <input type="tel" placeholder="학부모 연락처 (010-0000-0000)" />
+    <select>
+      <option value="" disabled selected>학년 선택</option>
+      <option>초등 1~3학년</option>
+      <option>초등 4~6학년</option>
+      <option>중학교 1학년</option>
+      <option>중학교 2학년</option>
+      <option>중학교 3학년</option>
+      <option>고등학교 1학년</option>
+      <option>고등학교 2학년</option>
+      <option>고등학교 3학년</option>
+    </select>
+    <select>
+      <option value="" disabled selected>관심 과목 선택</option>
+      <option>수학</option>
+      <option>영어</option>
+      <option>국어</option>
+      <option>과학</option>
+      <option>전 과목</option>
+    </select>
+    <select>
+      <option value="" disabled selected>지역 선택</option>
+      <option>서울</option>
+      <option>인천</option>
+      <option>경기</option>
+      <option>대전</option>
+      <option>대구</option>
+      <option>울산</option>
+      <option>부산</option>
+      <option>광주</option>
+      <option>충남</option>
+      <option>충북</option>
+      <option>전북</option>
+      <option>경북</option>
+      <option>경남</option>
+      <option>강원</option>
+      <option>제주</option>
+    </select>
+    <a href="tel:01084117380" class="consult-submit" style="display:block;text-align:center;text-decoration:none;">📞 상담 신청하기 → 010-8411-7380</a>
+  </div>
+</section>
+
+<section class="section" id="tuition">
+  <div class="accent-line"></div>
+  <div class="section-title">수강료 안내</div>
+  <div class="section-sub">※ 정확한 학원비는 방문 상담을 통해 결정됩니다 · 1교시 100분 기준</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;">
+    <div style="background:#F5F7FB;border-radius:14px;padding:24px 16px;text-align:center;">
+      <div style="font-size:18px;font-weight:700;color:#0D2B6B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #0D2B6B;">초등반</div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>350,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>210,000원</strong></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>140,000원</strong></div>
+    </div>
+    <div style="background:#FFF5F5;border-radius:14px;padding:24px 16px;text-align:center;">
+      <div style="font-size:18px;font-weight:700;color:#E05A2B;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #E05A2B;">중등반</div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>375,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>225,000원</strong></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>150,000원</strong></div>
+    </div>
+    <div style="background:#F0FAF4;border-radius:14px;padding:24px 16px;text-align:center;">
+      <div style="font-size:18px;font-weight:700;color:#1A6B3C;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #1A6B3C;">고등반</div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 5회 수업<br><strong>425,000원</strong></div>
+      <div style="margin-bottom:14px;line-height:1.8;font-size:14px;color:#333;">주 3회 수업<br><strong>255,000원</strong></div>
+      <div style="line-height:1.8;font-size:14px;color:#333;">주 2회 수업<br><strong>170,000원</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section"
+  <div class="accent-line"></div>
+  <div class="section-title">학부모 실제 후기</div>
+  <div class="section-sub">네이버 예약 기준 ★ 4.9 / 5.0 · 후기 230건+</div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">아이가 수학을 너무 싫어했는데, 선생님이 아이 수준부터 차근차근 잡아주셔서 이번 중간고사에서 처음으로 85점이 나왔어요. 학습 플랜도 매달 공유해주셔서 진도 파악이 쉬웠습니다.</div>
+    <div class="review-author">중2 학부모 · 수학 수강 6개월</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-text">영어 내신과 수능을 동시에 준비해야 해서 걱정이 많았는데, 박 선생님이 두 방향을 모두 잡아주셨어요. 소그룹이라 질문도 바로바로 할 수 있어서 좋았습니다.</div>
+    <div class="review-author">고1 학부모 · 영어 수강 4개월</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">★★★★☆</div>
+    <div class="review-text">처음에는 반신반의했는데 자기주도학습 훈련 덕분에 학원 안 다닌 날에도 스스로 공부하는 습관이 생겼어요. 강사님들이 정말 꼼꼼하게 봐주세요.</div>
+    <div class="review-author">초6 학부모 · 수학·국어 수강 8개월</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>동화세상에듀코원격평생교육학원</strong>
+  (주)동화세상에듀코 | 대표자 김영철 | 사업자등록번호 201-81-27348<br>
+  통신판매번호 : 2009-서울동대문-0409 | 대표전화 : 1899-2277<br>
+  서울특별시 동대문구 왕산로 25 (신설동 89-79)<br>
+  학원설립운영등록번호 : 제2773호 동화세상에듀코원격평생교육학원<br><br>
+  © 2025 (주)동화세상에듀코. All rights reserved.
+</footer>
+
+<a href="tel:01084117380" class="floating-btn">
+  <i class="ti ti-phone"></i> 무료 상담 신청
+</a>
+
+<script>
+function setTab(el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
